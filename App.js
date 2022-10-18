@@ -10,9 +10,9 @@ const TopTab = createMaterialTopTabNavigator();
 export default function App() {
   return (
     <NavigationContainer>
-      <TopTab.Navigator>
+      <TopTab.Navigator style={{backgroundColor:"green"}} tabBarPosition="bottom">
         <TopTab.Screen name='Home' component={HomeScreen} />
-        <TopTab.Screen name='Detailed' component={DetailedScreen} />
+        <TopTab.Screen name='Detailed' component={DetailedScreen}  />
         <TopTab.Screen name='Settings' component={SettingScreen}/>
       </TopTab.Navigator>
     </NavigationContainer>
