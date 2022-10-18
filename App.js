@@ -1,12 +1,21 @@
+import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
+import { NavigationContainer } from '@react-navigation/native';
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
+import DetailedScreen from './Screens/DetailedScreen';
+import HomeScreen from './Screens/HomeScreen';
+import SettingScreen from './Screens/SettingScreen';
 
+const TopTab = createMaterialTopTabNavigator();
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <NavigationContainer>
+      <TopTab.Navigator>
+        <TopTab.Screen name='Home' component={HomeScreen} />
+        <TopTab.Screen name='Detailed' component={DetailedScreen} />
+        <TopTab.Screen name='Settings' component={SettingScreen}/>
+      </TopTab.Navigator>
+    </NavigationContainer>
   );
 }
 
